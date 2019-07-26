@@ -4,7 +4,10 @@ const User = require('../models/user');
 const Login = require('../models/login');
 
 
-router.get('/')
+router.get('/', async (req, res)=>{
+	const users = await User.find({});
+	res.send('users/index.ejs')
+})
 
 
 
