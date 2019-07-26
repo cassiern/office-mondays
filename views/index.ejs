@@ -7,22 +7,22 @@
 		<h1>We Hate Mondays Too</h1>
 
 		<h2>Login</h2>
-		<% if(typeof message !== "undefined"){ %>
-			<p><%= message %></p>
+		<% if(typeof message !== "undefined" && message.type == "login"){ %>
+			<p><%= message.text %></p>
 		<% } %>
 		<form action="/login" method="POST">
-			Username: <input type="text" name="username">
-			Password: <input type="password" name="password">
+			<p>Username: <input type="text" name="username"></p>
+			<p>Password: <input type="password" name="password"></p>
 			<button type="submit">Login</button>
 		</form>
 
 		<h2>Create Account</h2>
-		<% if(typeof message !== "undefined"){ %>
-			<p><%= message %></p>
+		<% if(typeof message !== "undefined" && message.type == "register"){ %>
+			<p><%= message.text %></p>
 		<% } %>
 		<form action="/login/register" method="POST">
-			Create Username: <input type="text" name="username">
-			Create Password: <input type="password" name="password">
+			<p>Create Username: <input type="text" name="username"><p>
+			<p>Create Password: <input type="password" name="password"></p>
 			<button type="submit">Create Account</button>
 		</form>
 
