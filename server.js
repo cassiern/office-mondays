@@ -43,7 +43,7 @@ app.use('/login', loginController);
 
 app.use('/users', usersController);
 
-// app.use('/posts', postsController);
+app.use('/posts', postsController);
 
 
 app.get("/", (req,res) => {

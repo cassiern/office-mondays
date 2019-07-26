@@ -17,18 +17,21 @@ router.post("/", async (req,res) => {
 				req.session.username = foundUser.username;
 				req.session.logged = true;
 
-				res.redirect("post/index.ejs");
+				res.redirect("/posts");
 			} else {
-				req.session.message = "The username or password is incorrect";
+				req.session.message = {};
+				req.session.message.type = "login";
+				req.session.message.text = "The username or password is incorrect";
 				res.redirect("/");
-			}
+			} 
 		} else {
-			req.session.message = "The username or password is incorrect";
+			req.session.message = {};
+			req.session.message.type = "login";
+			req.session.message.text = "The username or password is incorrect";
 			res.redirect("/");
-		}
+		} 	
 	} catch(err) {
-		req.session.message = "The username or password is incorrect"
-		res.redirect("/");
+		res.send(err)
 	}
 });
 
@@ -51,7 +54,9 @@ router.post("/register", async (req,res) => {
 		res.redirect("/posts");
 	} catch(err) {
 		if(err.code === 11000) {
-			req.session.message = "That username has been taken, please enter another username.";
+			req.session.message = {};
+			req.session.message.type = "register"
+			req.session.message.text = "That username has been taken, please enter another username.";
 			res.redirect("/");
 		} else {
 			res.send(err);
