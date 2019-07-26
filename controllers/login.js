@@ -7,7 +7,7 @@ const bcrypt = require("bcryptjs");
 
 
 // LOGIN for registered users
-router.post("/login", async (req,res) => {
+router.post("/", async (req,res) => {
 	try {
 		const foundUser = await User.findOne({username: req.body.username});
 		console.log(foundUser, "<-- foundUser");
@@ -27,7 +27,8 @@ router.post("/login", async (req,res) => {
 			res.redirect("/");
 		}
 	} catch(err) {
-		res.send(err);
+		req.session.message = "The username or password is incorrect"
+		res.redirect("/");
 	}
 });
 
@@ -49,7 +50,12 @@ router.post("/register", async (req,res) => {
 
 		res.redirect("post/index.ejs");
 	} catch(err) {
-		res.send(err)
+		if(err.code === 11000) {
+			req.session.message = "That username has been taken, please enter another username.";
+			res.redirect("/");
+		} else {
+			res.send(err);
+		}
 	}
 });
 
