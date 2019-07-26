@@ -11,7 +11,6 @@ require('./db/db');
 
 const loginController = require('./controllers/login');
 const usersController = require('./controllers/users');
-
 const postsController = require('./controllers/posts');
 
 app.use(session({
@@ -43,12 +42,14 @@ app.use((req, res, next) => {
 app.use('/login', loginController);
 
 app.use('/users', usersController);
+
 // app.use('/posts', postsController);
 
 
 app.get("/", (req,res) => {
 	res.render("index.ejs");
 })
+
 
 
 app.listen(3000, () => {
