@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1> SHOW Page</h1>
+        <h2><%=posts.title%></h2>
+        <p>post body: <%=posts.postBody%></p>
+
+        <form action="/posts/<%=posts._id%>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete Post"/>
+        </form>
+        <form action="/posts/<%=posts._id%>/edit">
+            <input type="submit" value="Edit"/>
+        <a href="/posts">Home</a>
+
+</body>
+</html>
