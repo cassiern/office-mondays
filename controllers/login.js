@@ -17,7 +17,7 @@ router.post("/", async (req,res) => {
 				req.session.username = foundUser.username;
 				req.session.logged = true;
 
-				res.redirect("post/index.ejs");
+				res.redirect("/posts");
 			} else {
 				req.session.message = {};
 				req.session.message.type = "login";
@@ -51,7 +51,7 @@ router.post("/register", async (req,res) => {
 		req.session.username = createdUser.uersname;
 		req.session.logged = true;
 
-		res.redirect("post/index.ejs");
+		res.redirect("/posts");
 	} catch(err) {
 		if(err.code === 11000) {
 			req.session.message = {};
