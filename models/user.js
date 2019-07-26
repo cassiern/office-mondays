@@ -7,8 +7,8 @@ const Schema = mongoose.Schema;
 const userSchema = Schema({
 	profileImg: String,
 	aboutMe: String,
-	username: String,
-	password: String
+	username: {type: String, unique: true, require: true},
+	password: {type: String, require: true}
 })
 
 
