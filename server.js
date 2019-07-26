@@ -1,15 +1,15 @@
 const express = require('express');
 const app = express();
 
-require('./db.db');
+require('./db/db');
 
 const loginController = require('./controllers/login');
-const usersController = require('./controllers/login');
-const postController = require('./controllers/login');
+const usersController = require('./controllers/users');
+const postController = require('./controllers/posts');
 
-app.use('/login', loginController);
+//app.use('/login', loginController);
 app.use('/users', usersController);
-app.use('/post', postController);
+//app.use('/post', postController);
 
 
 
