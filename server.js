@@ -10,7 +10,6 @@ require('./db/db');
 
 const loginController = require('./controllers/login');
 const usersController = require('./controllers/users');
-
 const postsController = require('./controllers/posts');
 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -20,7 +19,7 @@ app.use(methodOverride('_method'));
 app.use('/login', loginController);
 
 app.use('/users', usersController);
-app.use('/posts', postsController);
+//app.use('/posts', postsController);
 
 
 app.listen(3000, () => {

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Profile Page</h1>
+<a href="/users">Home</a><br>
+
+Username: <%=user.username%><br>
+<img src="<%=user.profileImg%>"><br>
+About Me: <%=user.aboutMe%>
+
+
+
+
+
+
+
+
+
+<form action="/users/<%=user._id%>/edit?_method=Put">
+<button>Edit</button>
+</form>
+<form action="/users/<%=user._id%>?_method=DELETE" method="POST">
+<button>Delete</button>
+</form>
+
+
+
+
+
+
+</body>
+</html>
