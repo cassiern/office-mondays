@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+</head>
+	<body>
+		<h1>We Hate Mondays Too</h1>
+
+		<h2>Login</h2>
+		<% if(typeof message !== "undefined"){ %>
+			<p><%= message %></p>
+		<% } %>
+		<form action="/login" method="POST">
+			Username: <input type="text" name="username">
+			Password: <input type="password" name="password">
+			<button type="submit">Login</button>
+		</form>
+
+		<h2>Create Account</h2>
+		<% if(typeof message !== "undefined"){ %>
+			<p><%= message %></p>
+		<% } %>
+		<form action="/login/register" method="POST">
+			Create Username: <input type="text" name="username">
+			Create Password: <input type="password" name="password">
+			<button type="submit">Create Account</button>
+		</form>
+
+	</body>
+</html>
