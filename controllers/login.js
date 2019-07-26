@@ -48,7 +48,7 @@ router.post("/register", async (req,res) => {
 		req.session.username = createdUser.uersname;
 		req.session.logged = true;
 
-		res.redirect("post/index.ejs");
+		res.redirect("/posts");
 	} catch(err) {
 		if(err.code === 11000) {
 			req.session.message = "That username has been taken, please enter another username.";

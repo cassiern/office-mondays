@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Posts = require('../models/posts');
+const requireLogin = require("../middleware/requireLogin");
+
 
 //INDEX
 router.get('/', async (req, res) => {
