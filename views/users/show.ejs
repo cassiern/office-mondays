@@ -12,20 +12,18 @@ Username: <%=user.username%><br>
 About Me: <%=user.aboutMe%>
 
 
-
-
-
-
-
-
-
 <form action="/users/<%=user._id%>/edit?_method=Put">
 <button>Edit</button>
 </form>
 <form action="/users/<%=user._id%>?_method=DELETE" method="POST">
 <button>Delete</button>
 </form>
-
+ <h1> New Post Page</h1>
+     <form action="/users" method="POST">
+            Tile: <input type="text" name="title" /><br/>
+            Post: <input type="text" name="postBody" /><br/>
+     <input type="submit" class="btn" value="Post"/>
+</form> 
 
 
 
