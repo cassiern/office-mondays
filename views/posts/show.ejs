@@ -12,12 +12,13 @@
         <h2><%=posts.title%></h2>
         <p>post body: <%=posts.postBody%></p>
         
-        
+
         <form action="/posts/<%=posts._id%>?_method=DELETE" method="POST">
             <input type="submit" value="Delete Post"/>
         </form>
         <form action="/posts/<%=posts._id%>/edit">
             <input type="submit" value="Edit"/>
+
 <a href="/">Home</a>
 
 </body>
