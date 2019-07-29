@@ -12,11 +12,13 @@ Username: <%=user.username%><br>
 
 	<img src="<%=user.profileImg%>"><br>
 	About Me: <%=user.aboutMe%>
-<div>
+
+	<div>
 	   	<%posts.forEach(function(posts){%>
     		<a href="/posts/<%=posts._id%>"> <%=posts.title %> </a>
 		<%})%>
-</div>
+	</div>
+	
 
 
 <form action="/users/<%=user._id%>/edit?_method=Put">

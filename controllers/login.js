@@ -16,7 +16,7 @@ router.post("/", async (req,res) => {
 				req.session.userId = foundUser._id;
 				req.session.username = foundUser.username;
 				req.session.logged = true;
-
+				console.log(req.session, "<--- req.session")
 				res.redirect("/posts");
 			} else {
 				req.session.message = {};
@@ -65,6 +65,7 @@ router.post("/register", async (req,res) => {
 });
 
 
+// LOGOUT
 router.get("/", (req,res) => {
 	req.session.destroy((err) => {
 		console.log(req.session)
