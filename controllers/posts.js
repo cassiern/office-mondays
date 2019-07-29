@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Posts = require('../models/posts');
 const requireLogin = require("../middleware/requireLogin");
+const User = require('../models/user');
 
 
 //INDEX
@@ -40,7 +41,6 @@ router.get('/:id', async (req, res) => {
         console.log(foundShowPost);
         res.render('posts/show.ejs', {
             posts: foundShowPost,
-            userId: userId
         });
     }catch (error){
         res.send(error);

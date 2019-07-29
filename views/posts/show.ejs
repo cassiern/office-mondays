@@ -9,9 +9,10 @@
 <body>
     <h1> SHOW Page</h1>
         <h2><%=posts.title%></h2>
-        <p>post body: <%=posts.postBody%></p>
-
+        <p>Post body: <%=posts.postBody%></p>
+       <p>Written by: <%=posts.user.username%></p>
         <form action="/posts/<%=posts._id%>?_method=DELETE" method="POST">
+            <%if(%>
             <input type="submit" value="Delete Post"/>
         </form>
         <form action="/posts/<%=posts._id%>/edit">
