@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
+const Posts = require('../models/posts');
 const requireLogin = require("../middleware/requireLogin");
 
 
@@ -37,15 +38,19 @@ router.post('/', async (req, res)=>{
 //show route
 router.get('/:id', async (req, res)=>{
 	try{
-		const user = await User.findById(req.params.id).populate('posts');
+		const user = await User.findById(req.params.id);
+		const userPosts = await Posts.find({user: req.params.id});
+		console.log(user, "<--user");
+		console.log(userPosts, "<--userPosts");
 		res.render('users/show.ejs', {
-			posts: user.posts,
+			posts: userPosts,
 			user: user
 		})
 	}catch(err){
 		res.send(err)
 	}
 });
+
 //edit and update routes
 router.get('/:id/edit', (req, res)=>{
 	try{

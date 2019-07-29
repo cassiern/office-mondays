@@ -9,6 +9,10 @@ const userSchema = Schema({
 	aboutMe: String,
 	username: {type: String, unique: true, require: true},
 	password: {type: String, require: true},
+	posts: {
+		type: Schema.Types.ObjectId,
+		ref: "Posts"
+	}
 })
 
 
