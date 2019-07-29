@@ -4,6 +4,7 @@
 	<title></title>
 </head>
 <body>
+<%- include ../partials/_navbar.ejs %>
 <h1>Edit User</h1>
 <a href="/users">Home</a>
 <form action="/users/<%=user._id%>?_method="PUT">

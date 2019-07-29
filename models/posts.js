@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-const userSchema = new mongoose.Schema({
+const postSchema = new mongoose.Schema({
 	title: {type: String, required:true},
     postBody: {type: String, required:true},
     dateCreated: {type: Date, default: Date.now},
@@ -13,5 +13,5 @@ const userSchema = new mongoose.Schema({
 });
 
 
-const Posts = mongoose.model('Posts', userSchema);
+const Posts = mongoose.model('Posts', postSchema);
 module.exports = Posts;
