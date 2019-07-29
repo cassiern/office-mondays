@@ -7,7 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+    <%- include ../partials/_navbar.ejs %>
     <h1> this is the main for the post index page</h1>
+
     <ul>
     <%for(i=0;i<posts.length;i++){%>
        <li><a href="/posts/<%=posts[i]._id%>"><%=posts[i].title%></li>
@@ -16,6 +18,6 @@
     <form action="/posts/new">
         <input type="submit" value="create new post" />
     </form>
-    
+
 </body>
 </html>

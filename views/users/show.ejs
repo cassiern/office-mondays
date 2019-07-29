@@ -4,8 +4,9 @@
 	<title></title>
 </head>
 <body>
+
 <h1>Profile Page</h1>
-<a href="/users">Home</a><br>
+<%- include ../partials/_navbar.ejs %><br>
 
 Username: <%=user.username%><br>
 <img src="<%=user.profileImg%>"><br>

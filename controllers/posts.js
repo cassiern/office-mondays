@@ -34,7 +34,8 @@ router.get('/:id', async (req, res) => {
         const foundPostBody = await Posts.findById(req.params.id).populate('user');
         console.log(foundShowPost);
         res.render('posts/show.ejs', {
-            posts: foundShowPost
+            posts: foundShowPost,
+            userId: userId
         });
     }catch (error){
         res.send(error);

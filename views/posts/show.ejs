@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+<%- include ../partials/_navbar.ejs %>
     <h1> SHOW Page</h1>
         <h2><%=posts.title%></h2>
         <p>post body: <%=posts.postBody%></p>
@@ -16,7 +17,7 @@
         </form>
         <form action="/posts/<%=posts._id%>/edit">
             <input type="submit" value="Edit"/>
-    <a href="/posts">Home</a>
+<a href="/">Home</a>
 
 </body>
 </html>

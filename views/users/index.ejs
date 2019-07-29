@@ -3,12 +3,10 @@
 <head>
 	<title></title>
 </head>
-<body>
+<body>	
 <h1> Users Page</h1>
-<form action="/users/new">
-	<button>Create New User</button>
-</form>
 
+<%- include ../partials/_navbar.ejs %>
 
 
 <%for (let i =0; i < users.length; i++){%>
