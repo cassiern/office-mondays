@@ -33,6 +33,7 @@ app.use((req, res, next) => {
 		res.locals.message = req.session.message
 		req.session.message = null;
 	}
+	res.locals.session = req.session;
 	next();
 });
 
