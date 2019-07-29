@@ -7,7 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <%- include ../partials/_navbar.ejs %>
+
+<%- include ../partials/_navbar.ejs %>
+
     <h1> this is the main for the post index page</h1>
 
     <ul>
@@ -18,6 +20,11 @@
     <form action="/posts/new">
         <input type="submit" value="create new post" />
     </form>
+
+    <form action="/users">
+        <input type="submit" value="users" />
+    </form>
+    
 
 </body>
 </html>
