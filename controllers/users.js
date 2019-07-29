@@ -40,7 +40,8 @@ router.get('/:id', async (req, res)=>{
 	try{
 		const user = await User.findById(req.params.id);
 		const userPosts = await Posts.find({user: req.params.id});
-		console.log(userPosts);
+		console.log(user, "<--user");
+		console.log(userPosts, "<--userPosts");
 		res.render('users/show.ejs', {
 			posts: userPosts,
 			user: user

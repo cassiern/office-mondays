@@ -11,10 +11,12 @@
 Username: <%=user.username%><br>
 	<img src="<%=user.profileImg%>"><br>
 	About Me: <%=user.aboutMe%>
-
+	<div>
 	   	<%posts.forEach(function(posts){%>
     		<a href="/posts/<%=posts._id%>"> <%=posts.title %> </a>
 		<%})%>
+	</div>
+	
 
 
 
