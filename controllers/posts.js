@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Posts = require('../models/posts');
+const requireLogin = require("../middleware/requireLogin");
+
 
 //INDEX
 router.get('/', async (req, res) => {
@@ -19,8 +21,11 @@ router.get('/', async (req, res) => {
 //NEW
 router.get('/new', async (req, res) => {
     try{
+        const foundUserId = req.session.userId
+        console.log(foundUserId)
         console.log("this is the new page for the post")
         res.render('posts/new.ejs', {
+            userId: foundUserId
         })
     }catch (error) {
         res.send(error);
@@ -79,7 +84,7 @@ router.get('/:id/edit', async (req, res) => {
 router.post('/', async (req, res) => {
     try{
         const createdPost = await Posts.create(req.body);
-        console.log(createdPost)
+        console.log(req.body)
         res.redirect('/posts');
     }catch(error) {
         res.send(error)

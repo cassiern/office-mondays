@@ -4,18 +4,17 @@
 	<title></title>
 </head>
 <body>
+<%- include ../partials/_navbar.ejs %>
 <h1>Profile Page</h1>
 <a href="/users">Home</a><br>
 
 Username: <%=user.username%><br>
-<img src="<%=user.profileImg%>"><br>
-About Me: <%=user.aboutMe%>
+	<img src="<%=user.profileImg%>"><br>
+	About Me: <%=user.aboutMe%>
 
-
-
-
-
-
+	   	<%posts.forEach(function(posts){%>
+    		<a href="/posts/<%=posts._id%>"> <%=posts.title %> </a>
+		<%})%>
 
 
 
