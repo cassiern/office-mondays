@@ -3,13 +3,13 @@
 <head>
 	<title></title>
 </head>
-<body>
-<%- include ../partials/_navbar.ejs %>
-<h1> Users Page</h1>
-<form action="/users/new">
-	<button>Create New User</button>
-</form>
 
+<body>
+
+
+<h1> Users Page</h1>
+
+<%- include ../partials/_navbar.ejs %>
 
 
 <%for (let i =0; i < users.length; i++){%>
@@ -17,8 +17,6 @@
 	Username: <a href="/users/<%=users[i]._id%>"><%=users[i].username%></a><br/>
 	</div>
 <%}%>
-
-
 
 
 

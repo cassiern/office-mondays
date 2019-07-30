@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>User Profile</title>
 </head>
 <body>
-<%- include ../partials/_navbar.ejs %>
+
 <h1>Profile Page</h1>
-<a href="/users">Home</a><br>
+<%- include ../partials/_navbar.ejs %><br>
 
 Username: <%=user.username%><br>
+
 	<img src="<%=user.profileImg%>"><br>
 	About Me: <%=user.aboutMe%>
+
 	<div>
 	   	<%posts.forEach(function(posts){%>
     		<a href="/posts/<%=posts._id%>"> <%=posts.title %> </a>
 		<%})%>
 	</div>
 	
-
-
+<% if(currentUser == user._id){ %>
 
 <form action="/users/<%=user._id%>/edit?_method=Put">
 <button>Edit</button>
@@ -26,7 +27,8 @@ Username: <%=user.username%><br>
 <form action="/users/<%=user._id%>?_method=DELETE" method="POST">
 <button>Delete</button>
 </form>
-
+ 
+ <%}%>
 
 
 
