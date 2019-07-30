@@ -19,7 +19,7 @@ Username: <%=user.username%><br>
 		<%})%>
 	</div>
 	
-
+<% if(currentUser == user._id){ %>
 
 <form action="/users/<%=user._id%>/edit?_method=Put">
 <button>Edit</button>
@@ -28,6 +28,7 @@ Username: <%=user.username%><br>
 <button>Delete</button>
 </form>
  
+ <%}%>
 
 
 
